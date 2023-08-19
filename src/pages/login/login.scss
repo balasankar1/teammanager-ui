@@ -1,0 +1,100 @@
+.login {
+  width: 25vw;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  outline: 1px solid white;
+  background-color: white;
+  border-radius: 15px;
+  position: absolute;
+  right: 10rem;
+  top: 7.5rem;
+  overflow: hidden;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 400;
+  }
+  input {
+    width: 80%;
+    height: 48px;
+    border-radius: 15px;
+    color: black;
+    font-size: large;
+    padding-left: 15px;
+  }
+
+  button {
+    width: 80%;
+    height: 48px;
+    font-size: large;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-weight: bolder;
+    border-radius: 8px;
+    z-index: 2;
+  }
+
+  button:hover {
+    background-color: white;
+    color: black;
+    outline: 1px solid black;
+  }
+
+  .circle {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    background-color: lightsalmon;
+    position: absolute;
+    top: -180px;
+    right: 200px;
+  }
+
+  .circle2 {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    background-color: lightseagreen;
+    position: absolute;
+    bottom: -180px;
+    left: 200px;
+  }
+  .error {
+    color: red;
+    font-size: 25px;
+    transform: translateY(-40px);
+  }
+}
+
+.hero {
+  width: 40vw;
+  height: 70vh;
+  position: relative;
+  top: 6rem;
+  left: 9rem;
+
+  div {
+    position: absolute;
+    top: 210px;
+    left: 190px;
+    color: white;
+    font-size: 48px;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.caption {
+  color: white;
+  font-size: 32px;
+  position: absolute;
+  bottom: 3rem;
+  left: 11rem;
+}
