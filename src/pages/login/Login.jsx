@@ -10,7 +10,7 @@ export default function Login() {
 
   const handleClick = () => {
     try {
-      const res = axios.post("localhost:3300/api/auth/login", {
+      const res = axios.post("http://localhost:3300/api/auth/login", {
         email: email,
         password: password,
       });
@@ -50,9 +50,9 @@ export default function Login() {
           SignIn
         </button>
         <div className="error">{error}</div>
-        <div className="circle"></div>
-        <div className="circle2"></div>
       </div>
+      <div className="circle1"></div>
+      <div className="circle2"></div>
     </div>
   );
 }

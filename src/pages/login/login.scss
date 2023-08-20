@@ -1,3 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(45deg, #ff9ce3, #4ab3ff);
+}
+
 .login {
   width: 25vw;
   height: 70vh;
@@ -6,9 +16,10 @@
   justify-content: space-around;
   align-items: center;
   outline: 1px solid white;
-  background-color: white;
+  background: rgba(255, 255, 255, 0.4);
   border-radius: 15px;
   position: absolute;
+  backdrop-filter: blur(7px);
   right: 10rem;
   top: 7.5rem;
   overflow: hidden;
@@ -16,6 +27,7 @@
   h1 {
     font-size: 2.5rem;
     font-weight: 400;
+    color: white;
   }
   input {
     width: 80%;
@@ -24,18 +36,24 @@
     color: black;
     font-size: large;
     padding-left: 15px;
+    background: transparent;
+  }
+  :focus {
+    outline: none;
   }
 
   button {
     width: 80%;
     height: 48px;
     font-size: large;
-    background-color: black;
+    background: transparent;
+    outline: none;
     color: white;
     cursor: pointer;
     font-weight: bolder;
     border-radius: 8px;
     z-index: 2;
+    border: 1px solid white;
   }
 
   button:hover {
@@ -43,31 +61,11 @@
     color: black;
     outline: 1px solid black;
   }
-
-  .circle {
-    height: 250px;
-    width: 250px;
-    border-radius: 50%;
-    background-color: lightsalmon;
-    position: absolute;
-    top: -180px;
-    right: 200px;
-  }
-
-  .circle2 {
-    height: 250px;
-    width: 250px;
-    border-radius: 50%;
-    background-color: lightseagreen;
-    position: absolute;
-    bottom: -180px;
-    left: 200px;
-  }
-  .error {
-    color: red;
-    font-size: 25px;
-    transform: translateY(-40px);
-  }
+}
+.error {
+  color: red;
+  font-size: 25px;
+  transform: translateY(-40px);
 }
 
 .hero {
@@ -97,4 +95,36 @@
   position: absolute;
   bottom: 3rem;
   left: 11rem;
+}
+
+.circle1,
+.circle2 {
+  z-index: -5;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.circle1 {
+  height: 600px;
+  width: 600px;
+  background-image: linear-gradient(
+    180deg,
+    #97ff57 0%,
+    #0d99ff 99.9%,
+    #0094ff 100%
+  );
+  filter: blur(10px);
+  transform: rotate(18deg);
+  left: -120px;
+  top: -150px;
+}
+
+.circle2 {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(180deg, #ff57d0 0%, #0d99ff 99.99%, #0094ff 100%);
+  filter: blur(5px);
+  transform: rotate(18deg);
+  bottom: -100px;
+  right: -80px;
 }
