@@ -1,13 +1,14 @@
 import "./create.scss";
-export default function createMember() {
+export default function CreateMember() {
   return (
     <div className="card">
-      <div>create Member</div>
-      <input placeholder="name" />
-      <input placeholder="role" />
-      <input placeholder="email" />
-      <input placeholder="address" />
-      <input placeholder="phone number" />
+      <div className="heading">Create Member</div>
+      <input placeholder="Name" />
+      <input placeholder="Role" />
+      <input placeholder="Email" />
+      <input placeholder="Address" />
+      <input placeholder="Phone number" />
+      <button>create</button>
     </div>
   );
 }

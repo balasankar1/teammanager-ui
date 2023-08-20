@@ -2,25 +2,32 @@ import "./login.scss";
 import { useState } from "react";
 import network from "../../assets/network-5508173_1280.png";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
-  const handleClick = () => {
+  const handleClick = async () => {
+    let res;
     try {
-      const res = axios.post("http://localhost:3300/api/auth/login", {
+      res = await axios.post("http://localhost:3300/api/auth/signin", {
         email: email,
         password: password,
       });
+      console.log(res);
       sessionStorage.set(res.data.token);
+      console.log(res.data.token);
     } catch (error) {
       if (error.response) {
         setError(error.response.data.error);
       }
     }
+    if (res) navigate("/dashboard");
   };
+
   return (
     <div>
       <div className="hero">
@@ -45,7 +52,9 @@ export default function Login() {
         <button
           disabled={!email || !password}
           style={{ cursor: !email || !password ? `not-allowed` : "pointer" }}
-          onClick={handleClick}
+          onClick={() => {
+            handleClick();
+          }}
         >
           SignIn
         </button>

@@ -28,13 +28,13 @@ body {
   .card-content {
     font-size: 14px;
     margin-top: 10px;
-    width: 100%;
+    width: 200px;
     height: 200px;
     border: 1px solid white;
     padding: 10px;
     border-radius: 15px;
     background: rgba(255, 255, 255, 0.4);
-    border: 1px solid white;
+
     backdrop-filter: blur(7px);
   }
 }

@@ -77,50 +77,6 @@ export default function Member() {
         address="dbhcudbc"
         phone="dmdnjicdn"
       />
-
-      <Card
-        name="jdnidc"
-        role="dd"
-        email="dmjdmncdj"
-        address="dbhcudbc"
-        phone="dmdnjicdn"
-      />
-      <Card
-        name="jdnidc"
-        role="dd"
-        email="dmjdmncdj"
-        address="dbhcudbc"
-        phone="dmdnjicdn"
-      />
-      <Card
-        name="jdnidc"
-        role="dd"
-        email="dmjdmncdj"
-        address="dbhcudbc"
-        phone="dmdnjicdn"
-      />
-      <Card
-        name="jdnidc"
-        role="dd"
-        email="dmjdmncdj"
-        address="dbhcudbc"
-        phone="dmdnjicdn"
-      />
-      <Card
-        name="jdnidc"
-        role="dd"
-        email="dmjdmncdj"
-        address="dbhcudbc"
-        phone="dmdnjicdn"
-      />
-
-      <Card
-        name="jdnidc"
-        role="dd"
-        email="dmjdmncdj"
-        address="dbhcudbc"
-        phone="dmdnjicdn"
-      />
     </div>
   );
 }
