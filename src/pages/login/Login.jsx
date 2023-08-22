@@ -1,8 +1,10 @@
 import "./login.scss";
 import { useState } from "react";
-import network from "../../assets/network-5508173_1280.png";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import StyleText from "../../components/wavy text/WavyText";
+import icon from "../../assets/group.png";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -18,8 +20,7 @@ export default function Login() {
         password: password,
       });
       console.log(res);
-      sessionStorage.set(res.data.token);
-      console.log(res.data.token);
+      sessionStorage.setItem("userToken", res.data.token);
     } catch (error) {
       if (error.response) {
         setError(error.response.data.error);
@@ -29,14 +30,22 @@ export default function Login() {
   };
 
   return (
-    <div>
-      <div className="hero">
-        <div>InfoMate</div>
-        <img src={network} alt="" />
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <div className="top">
+        <StyleText />
+        <div className="top-text">Manage team details with ease</div>
       </div>
-      <div className="caption">" Manage Team Details with Ease "</div>
+
       <div className="login">
-        <h1>Sign In</h1>
+        <div className="login-top">
+          <img className="card-logo" src={icon} alt="img" />
+          <h1>Sign In</h1>
+        </div>
+
         <input
           type="text"
           placeholder="Email"
@@ -62,6 +71,6 @@ export default function Login() {
       </div>
       <div className="circle1"></div>
       <div className="circle2"></div>
-    </div>
+    </motion.div>
   );
 }

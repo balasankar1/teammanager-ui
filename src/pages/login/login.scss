@@ -7,6 +7,15 @@
 body {
   background-image: linear-gradient(45deg, #ff9ce3, #4ab3ff);
 }
+.top {
+  color: black;
+  position: relative;
+  top: 150px;
+  right: 150px;
+  .top-text {
+    font-size: 3rem;
+  }
+}
 
 .login {
   width: 25vw;
@@ -23,6 +32,19 @@ body {
   right: 10rem;
   top: 7.5rem;
   overflow: hidden;
+
+  img {
+    width: 40px;
+    height: 40px;
+    margin-right: 30px;
+  }
+
+  .login-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   h1 {
     font-size: 2.5rem;
@@ -58,7 +80,7 @@ body {
 
   button:hover {
     background-color: white;
-    color: black;
+    color: blue;
     outline: 1px solid black;
   }
 }
@@ -66,27 +88,6 @@ body {
   color: red;
   font-size: 25px;
   transform: translateY(-40px);
-}
-
-.hero {
-  width: 40vw;
-  height: 70vh;
-  position: relative;
-  top: 6rem;
-  left: 1rem;
-
-  div {
-    position: absolute;
-    top: 210px;
-    left: 190px;
-    color: white;
-    font-size: 48px;
-  }
-
-  img {
-    height: 100%;
-    width: 100%;
-  }
 }
 
 .caption {

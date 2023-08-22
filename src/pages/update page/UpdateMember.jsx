@@ -1,10 +1,12 @@
-import "./create.scss";
+import "./update.scss";
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
 
 export default function CreateMember() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const id = urlParams.get("m_id");
+
   let navigate = useNavigate();
   const [name, setName] = useState("");
   const [role, setRole] = useState("");
@@ -12,12 +14,12 @@ export default function CreateMember() {
   const [address, setAddress] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [creationStatus, setCreationStatus] = useState(null);
-  const token = sessionStorage.getItem("userToken");
 
-  const handleCreate = async () => {
+  const handleUpdate = async () => {
+    const token = sessionStorage.getItem("userToken");
     try {
-      const response = await axios.post(
-        "http://localhost:3300/api/member/add",
+      const response = await axios.put(
+        `http://localhost:3300/api/member/update/${id}`,
         {
           name,
           role,
@@ -26,7 +28,10 @@ export default function CreateMember() {
           phoneNumber,
         },
         {
-          headers: { authorization: `${token}` },
+          headers: {
+            Authorization: token,
+            "Content-Type": "application/json",
+          },
         }
       );
 
@@ -42,13 +47,8 @@ export default function CreateMember() {
   };
 
   return (
-    <motion.div
-      className="card"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
-      <div className="heading">Create Member</div>
+    <div className="card">
+      <div className="heading">Update Member</div>
       <input
         placeholder="Name"
         value={name}
@@ -82,9 +82,9 @@ export default function CreateMember() {
               ? `not-allowed`
               : "pointer",
         }}
-        onClick={handleCreate}
+        onClick={handleUpdate}
       >
-        Create
+        Update
       </button>
 
       {creationStatus && (
@@ -98,6 +98,6 @@ export default function CreateMember() {
           {creationStatus}
         </div>
       )}
-    </motion.div>
+    </div>
   );
 }
