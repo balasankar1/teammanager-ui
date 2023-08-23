@@ -24,6 +24,7 @@ export default function Login() {
     } catch (error) {
       if (error.response) {
         setError(error.response.data.error);
+        window.location.reload();
       }
     }
     if (res) navigate("/dashboard");

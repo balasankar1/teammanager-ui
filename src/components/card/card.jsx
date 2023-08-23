@@ -28,10 +28,22 @@ const Card = ({ id, name, role, email, address, phone }) => {
       </div>
 
       <div className="card-body">
-        <div>Email:{email}</div>
-        <div>Role:{role}</div>
-        <div>Address:{address}</div>
-        <div>Phone Number:{phone}</div>
+        <div className="cb-inner">
+          <div className="left">Email:</div>
+          <div>{email}</div>
+        </div>
+        <div className="cb-inner">
+          <div className="left">Role:</div>
+          <div>{role}</div>
+        </div>
+        <div className="cb-inner">
+          <div className="left">Address:</div>
+          <div>{address}</div>
+        </div>
+        <div className="cb-inner">
+          <div className="left">Phone Number:</div>
+          <div>{phone}</div>
+        </div>
       </div>
     </div>
   );

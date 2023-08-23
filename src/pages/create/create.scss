@@ -5,13 +5,15 @@ body {
 }
 
 .card {
+  margin-top: 7rem;
   width: 370px;
-  height: 450px;
+  height: 500px;
   display: flex;
   // align-items: center;
   background: rgba(255, 255, 255, 0.4);
   border-radius: 15px;
   backdrop-filter: blur(7px);
+  padding: 10px;
 
   .heading {
     font-size: 2rem;
